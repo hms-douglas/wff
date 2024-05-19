@@ -1,0 +1,187 @@
+<!-- DECT :: 2024 -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#111214"></meta>
+    <title>WFF</title>
+    <meta name="description" content="This application is a free tool to help developers creating watch faces banners/images/frames.">
+    <link rel="shortcut icon" href="img/favicon/favicon.ico" id="favicon">
+    <link rel="preload" as="style" type="text/css" href="css/acolorpicker.css">
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div id="TOP_BAR">
+        <span id="APP_NAME"></span>
+        
+        <span id="VERSION"></span>
+        
+        <a id="GITHUB"  href="https://github.com/hms-douglas/wff" target="_blank" rel="noopener noreferrer"></a>
+        <a id="SUPPORT_ME"  href="https://www.paypal.com/donate/?hosted_button_id=QZX5XKGFRZPSU" target="_blank" rel="noopener noreferrer"></a>
+
+        <div id="LANGUAGE_ACTIVE"></div>
+    </div>
+
+    <div class="page show" id="SELECT_FILES">
+        <div class="scrollable">
+            <div class="full">
+                <div class="utils-center" id="SELECT_CONTAINER">
+                    <div id="INPUT">
+                        <label class="utils-center" data-k="FILE_INPUT_LABEL" id="FILE_INPUT_LABEL"></label>
+                        <input id="INPUT_FILE" type="file" accept="image/png" multiple>
+                    </div>
+
+                    <div id="OUTPUT_CONTAINER"></div>
+
+                    <div class="btns" id="SELECT_FILES_BTNS">
+                        <div class="btn icon i-settings" id="BTN_GENERATE_SETTINGS"></div>
+                        <div class="btn" id="BTN_GENERATE" data-k="BTN_GENERATE"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom_credits">
+                <span data-k="ABOUT_GENERAL"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="page" id="MAIN">
+        <div id="ASSETS"></div>
+
+        <div id="COLORPICKER"></div>
+
+        <div class="fixed">
+            <div class="btn" id="BTN_NEW" data-k="BTN_NEW"></div>
+            <div class="btn btn--secondary" id="BTN_DOWNLOAD_SELECTED" data-k="BTN_DOWNLOAD_ALL_SELECTED"></div>
+        </div>
+
+        <div class="divisor">
+            <span data-k="GLOBAL_SETTINGS"></span>
+        </div>
+
+        <div class="input-global cols cols-3">
+            <div class="input col-1">
+                <input type="text" placeholder id="LABEL_GLOBAL"/>
+                <span class="placeholder" data-k="PH_LABEL"></span>
+            </div>
+
+            <div class="input col-1">
+                <input placeholder="" readonly="" value="" id="BG_GLOBAL">
+                <span class="placeholder" data-k="PH_BACKGROUND"></span>
+            </div>
+
+            <div class="input col-1">
+                <select id="BADGE_GLOBAL"></select>
+            
+                <span class="placeholder" data-k="PH_BADGE"></span>
+            </div>
+    
+            <label class="input col-full">
+                <textarea type="text" placeholder id="TEXT_GLOBAL"></textarea>
+                <span class="placeholder" data-k="PH_TEXT"></span>
+            </label>
+
+            <div class="btn btn--secondary" id="BTN_APPLY" data-k="BTN_APPLY"></div>
+        </div>
+
+        <div class="divisor">
+            <span data-k="FRAMES"></span>
+        </div>
+
+        <div id="FRAMES_CONTAINER"></div>
+
+        <div class="bottom_credits">
+            <span data-k="ABOUT_GENERAL"></span>
+        </div>
+    </div>
+
+    <div class="page full" id="MOBILE">
+        <div class="utils-center" data-k="MSG_FOR_DESKTOP"></div>
+    </div>
+
+    <div class="popup closeable" id="INFO">
+        <div class="close"></div>
+
+        <div class="utils-center">
+            <div class="body" id="INFO_TEXT"></div>
+        </div>
+    </div>
+
+    <div class="popup closeable" id="PICK_LANGUAGE">
+        <div class="close"></div>
+
+        <div class="utils-center">
+            <div class="body" id="LANGUAGE_PICKER"></div>
+        </div>
+    </div>
+
+    <div class="popup closeable" id="ZOOM">    
+        <div class="close"></div>    
+        
+        <img id="ZOOMED"/>
+    </div>
+
+    <div class="popup closeable" id="SETTINGS">
+        <div class="close"></div>
+
+        <div class="utils-center">
+            <div class="body">
+                <span class="title" data-k="SETTINGS"></span>
+
+                <span class="subtitle" data-k="RENDER_FRAMES_NUMBER"></span>
+
+                <div id="CONTAINER_FRAMES_NUMBER"></div>
+
+                <span class="subtitle" data-k="RENDER_ONE_FRAME"></span>
+
+                <div>
+                    <div class="input checkbox">
+                        <input type="checkbox" id="RENDER_ONE_FRAME">
+                        <label data-k="DISABLED" for="RENDER_ONE_FRAME"></label>
+                    </div>
+                </div>
+
+                <span class="subtitle" data-k="RENDER_WF_RESOLUTION"></span>
+
+                <div>
+                    <div class="input range range--fixed range--reverse">
+                        <input type="range" id="RENDER_WF_RESOLUTION" max="3" min="1" step="1">
+                        
+                        <div class="cols cols-3">
+                            <span class="col-1" data-k="R_LOW"></span>
+                            <span class="col-1" data-k="R_MEDIUM"></span>
+                            <span class="col-1" data-k="R_HIGH"></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="popup" id="LOADING">
+        <div class="utils-center" id="LOADER">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="utils-center" id="PROGRESS">
+            <div></div>
+        </div>
+    </div>
+
+    <div id="TOAST_CONTAINER"></div>
+
+    <script src="js/language.js"></script>
+    <script src="js/frames.js"></script>
+    <script src="js/jszip.js" defer></script>
+    <script src="js/acolorpicker.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

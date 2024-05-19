@@ -1,0 +1,37 @@
+{
+    "name" : "WatchFaceFrame",
+    "short_name" : "WFF",
+    "description": "This application is a free tool to help developers creating watch faces banners/images/frames.",
+    "start_url" : ".",
+    "icons" : [
+        {
+            "src": "img/icon/app/icon-72x72.png",
+            "sizes": "72x72",
+            "type": "image/png"
+          },
+          {
+            "src": "img/icon/app/icon-96x96.png",
+            "sizes": "96x96",
+            "type": "image/png"
+          },
+          {
+            "src": "img/icon/app/icon-128x128.png",
+            "sizes": "128x128",
+            "type": "image/png"
+          },
+          {
+            "src": "img/icon/app/icon-144x144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+          },
+          {
+            "src": "img/icon/app/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+          }
+    ],
+    "theme_color" : "#111214",
+    "background_color" : "#111214",
+    "display": "standalone",
+    "orientation": "landscape"
+}
