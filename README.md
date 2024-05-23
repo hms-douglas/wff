@@ -28,6 +28,10 @@ If you would like to support me, you can make a donation clicking on the button 
 
 <br/>
 <h2>Log</h2>
+<b>v1.0.1</b>
+<ul>
+  <li>Conflict fixed.</li>
+</ul>
 <b>v1.0.0</b>
 <ul>
   <li>Release.</li>
