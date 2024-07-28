@@ -8,7 +8,6 @@
     <title>WFF</title>
     <meta name="description" content="This application is a free tool to help developers creating watch faces banners/images/frames.">
     <link rel="shortcut icon" href="img/favicon/favicon.ico" id="favicon">
-    <link rel="preload" as="style" type="text/css" href="css/acolorpicker.css">
     <link rel="stylesheet" type="text/css" href="css/font.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="manifest" href="manifest.json">
@@ -50,6 +49,11 @@
     </div>
 
     <div class="page" id="MAIN">
+        <div id="HIDDEN">
+            <input id="INPUT_FONT" type="file" accept=".otf,.ttf,.woff2" multiple>
+            <input id="INPUT_LOGO" type="file" accept="image/png" multiple>
+        </div>
+
         <div id="ASSETS"></div>
 
         <div id="COLORPICKER"></div>
@@ -60,14 +64,57 @@
         </div>
 
         <div class="divisor">
-            <span data-k="GLOBAL_SETTINGS"></span>
+            <span data-k="QUICK_SETTINGS"></span>
         </div>
 
-        <div class="input-global cols cols-3">
+        <div class="input-global cols cols-4">
             <div class="input col-1">
                 <input type="text" placeholder id="LABEL_GLOBAL"/>
                 <span class="placeholder" data-k="PH_LABEL"></span>
             </div>
+
+            <div class="input col-1">
+                <input placeholder="" readonly="" id="LABEL_FONT_GLOBAL">
+                <span class="placeholder" data-k="PH_LABEL_FONT"></span>
+                <div class="dropdown"></div>
+            </div>
+
+            <div class="input col-1">
+                <input placeholder="" value="" id="LABEL_SIZE_GLOBAL" type="number">
+                <span class="placeholder" data-k="PH_LABEL_SIZE"></span>
+            </div>
+
+            <div class="input col-1">
+                <input placeholder="" readonly="" value="" id="LABEL_COLOR_GLOBAL">
+                <span class="placeholder" data-k="PH_LABEL_COLOR"></span>
+            </div>
+
+            <div class="divisor divisor--sub"></div>
+
+            <div class="input col-1">
+                <textarea type="text" placeholder id="TEXT_GLOBAL"></textarea>
+                <span class="placeholder" data-k="PH_TEXT"></span>
+            </div>
+
+            <div class="cols cols-3 col-3">
+                <div class="input col-1">
+                    <input placeholder="" readonly="" id="TEXT_FONT_GLOBAL">
+                    <span class="placeholder" data-k="PH_TEXT_FONT"></span>
+                    <div class="dropdown" style="display: none;"></div>
+                </div>
+    
+                <div class="input col-1">
+                    <input placeholder="" value="" id="TEXT_SIZE_GLOBAL" type="number">
+                    <span class="placeholder" data-k="PH_TEXT_SIZE"></span>
+                </div>
+    
+                <div class="input col-1">
+                    <input placeholder="" readonly="" value="" id="TEXT_COLOR_GLOBAL">
+                    <span class="placeholder" data-k="PH_TEXT_COLOR"></span>
+                </div>
+            </div>
+
+            <div class="divisor divisor--sub"></div>
 
             <div class="input col-1">
                 <input placeholder="" readonly="" value="" id="BG_GLOBAL">
@@ -75,17 +122,20 @@
             </div>
 
             <div class="input col-1">
-                <select id="BADGE_GLOBAL"></select>
-            
+                <input placeholder="" readonly="" id="BADGE_GLOBAL">
                 <span class="placeholder" data-k="PH_BADGE"></span>
+                <div class="dropdown"></div>
+            </div>
+
+            <div class="input col-1">
+                <input placeholder="" readonly="" id="LOGO_GLOBAL">
+                <span class="placeholder" data-k="PH_LOGO"></span>
+                <div class="dropdown"></div>
             </div>
     
-            <label class="input col-full">
-                <textarea type="text" placeholder id="TEXT_GLOBAL"></textarea>
-                <span class="placeholder" data-k="PH_TEXT"></span>
-            </label>
-
-            <div class="btn btn--secondary" id="BTN_APPLY" data-k="BTN_APPLY"></div>
+            <div class="cols">
+                <div class="btn btn--secondary" id="BTN_APPLY" data-k="BTN_APPLY"></div>
+            </div>
         </div>
 
         <div class="divisor">
@@ -136,6 +186,12 @@
 
                 <div id="CONTAINER_FRAMES_NUMBER"></div>
 
+                <span class="subtitle" data-k="RENDER_FRAMES_IDS"></span>
+
+                <div class="input">
+                    <input type="text" placeholder="Example: 1, 15, 16, 52" id="RENDER_FRAMES_IDS">
+                </div>
+
                 <span class="subtitle" data-k="RENDER_ONE_FRAME"></span>
 
                 <div>
@@ -181,7 +237,7 @@
     <script src="js/language.js"></script>
     <script src="js/frames.js"></script>
     <script src="js/jszip.js" defer></script>
-    <script src="js/acolorpicker.js"></script>
+    <script src="js/r9picker.min.js"></script>
     <script src="js/app.js"></script>
 </body>
 </html>
