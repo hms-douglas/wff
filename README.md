@@ -10,10 +10,7 @@ You can access the webapp using <a href="https://hms-douglas.github.io/wff/">thi
 <br/>
 <h2>Roadmap</h2>
 <ul>
-  <li>Change font color;</li>
-  <li>Change font;</li>
-  <li>Add user custom logo;</li>
-  <li>Add custom background pattern.</li>
+  <li>...</li>
 </ul>
 
 <br/>
